@@ -16,11 +16,39 @@ The primary goal of the GNN analysis is to utilize the capabilities of graph neu
   - **Nodes** represent entities (e.g., users, items).
   - **Edges** represent relationships or interactions between these entities (e.g., friendships, connections).
 
-### 2. Model Architecture
+# Graph Neural Network Architecture Overview
 
-- **GNN Definition**: The architecture of the GNN is defined, specifying:
-  - How information will be propagated through the graph.
-  - The layers and activation functions used in the network.
+## Introduction
+
+This document provides a streamlined overview of the architecture used in the Graph Neural Network (GNN) analysis conducted by Abhisek Praharaj. The architecture is designed to effectively process graph-structured data, capturing relationships and interactions among entities.
+
+## GNN Architecture Components
+
+### 1. **Input Layer**
+
+- **Graph Representation**: The input to the GNN consists of a graph where:
+  - **Nodes** represent entities (e.g., users, items).
+  - **Edges** represent relationships between these entities (e.g., connections, interactions).
+
+### 2. **Message Passing Layers**
+
+- **Information Propagation**: The core of the GNN architecture involves multiple layers that facilitate message passing between nodes. Each node aggregates information from its neighbors to update its own representation. This process typically involves:
+  - **Neighbor Aggregation**: Each node collects features from its neighboring nodes.
+  - **Update Function**: A function (often a neural network) updates the node's feature vector based on the aggregated information.
+
+### 3. **Activation Functions**
+
+- **Non-linearity**: After each message passing layer, activation functions (such as ReLU or Sigmoid) are applied to introduce non-linearity into the model, allowing it to learn complex patterns in the data.
+
+### 4. **Readout Layer**
+
+- **Global Representation**: After several rounds of message passing, a readout layer is employed to generate a global representation of the graph or individual node representations for downstream tasks. This can involve:
+  - Summing or averaging node features.
+  - Using a more complex pooling mechanism.
+
+### 5. **Output Layer**
+
+- **Prediction**: The final output layer produces predictions based on the learned representations. This could be for tasks such as node classification, link prediction, or graph classification.
 
 ### 3. Training Process
 
@@ -41,6 +69,7 @@ The primary goal of the GNN analysis is to utilize the capabilities of graph neu
 - **Outcome Analysis**: The results from the GNN analysis are interpreted to understand:
   - How well the model captured relationships within the graph.
   - Insights gained regarding the effectiveness of GNNs for the specific application at hand.
+
 
 ## Conclusion
 
